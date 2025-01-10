@@ -1,11 +1,11 @@
 // feelingImages.js
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   const feelingImageMap = {
-    happiness: "./img/happiness.webp",
-    sadness: "./img/sadness.webp",
-    anger: "./img/anger.webp",
-    fear: "./img/fear.webp",
-    love: "./img/love.webp",
+    happiness: './img/happiness.webp',
+    sadness: './img/sadness.webp',
+    anger: './img/anger.webp',
+    fear: './img/fear.webp',
+    love: './img/love.webp',
   };
 
   for (const feeling in feelingImageMap) {
