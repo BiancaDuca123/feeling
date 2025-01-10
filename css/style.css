@@ -1,0 +1,569 @@
+@font-face {
+  font-family: "PPNeueCorp";
+  src: url("../fonts/PPNeueCorp-WideUltrabold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueCorp";
+  src: url("../fonts/PPNeueCorp-CompactUltrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueCorp";
+  src: url("../fonts/PPNeueCorp-CompactMedium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueCorp";
+  src: url("../fonts/PPNeueCorp-CompactUltralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  --white: #ffffff;
+  --soft-yello: #fff8e8;
+  --medium-yello: #fcd581;
+  --dark-red: #e00004;
+  --darker-pink: #b48eae;
+  --prussian-blue: #212d40;
+  --purple: #c44bc8;
+  --black: #000000;
+  --brown: #2e0f15;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 500;
+  background-color: var(--white);
+  color: var(--soft-yello);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--black);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  color: var(--black);
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  color: var(--black);
+  text-align: center;
+}
+
+.highlight-cyan {
+  color: var(--soft-yello);
+}
+
+.highlight-text {
+  color: var(--purple);
+}
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  text-align: left;
+  background-color: var(--brown);
+}
+
+.site-logo {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 900;
+  font-size: 10rem;
+  color: var(--white);
+  cursor: default;
+}
+
+.header-content {
+  text-align: center;
+  margin: 2rem auto;
+  color: var(--white);
+}
+
+.site-title {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.header-description {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 200;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link.button,
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--white);
+  text-decoration: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link.current {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: default;
+  color: var(--white);
+}
+
+.nav-link.button:hover,
+.dropdown-toggle:hover {
+  color: var(--soft-yello);
+  transform: scale(1.05);
+}
+
+#arrow {
+  margin-left: 0.4rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1.hero-highlight,
+h2.hero-highlight {
+  color: #fff !important;
+  font-weight: 800;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.hero-content h2 {
+  margin-top: 1.5rem;
+  color: var(--dark-red);
+  width: 100%;
+}
+
+.feelings-section {
+  padding: 4rem 2rem;
+}
+
+.feelings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 1.5rem;
+}
+
+.feeling-card {
+  text-align: center;
+  aspect-ratio: 1.6 / 1.2;
+  max-width: 500px;
+  padding: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feeling-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-section {
+  padding: 4rem 2rem;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.about-section h2 {
+  color: var(--black);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p {
+  color: var(--black);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.site-footer {
+  padding: 1rem 0;
+  text-align: center;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 0.9rem;
+}
+
+.large-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-top: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2.section-title {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+/* Hide the dropdown menu by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem 0;
+  z-index: 10;
+  min-width: 200px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animation for showing the dropdown menu */
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* Animation for hiding the dropdown menu */
+.dropdown-menu.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 500;
+  color: var(--prussian-blue);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.fade-in.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.fade-in.delay-3 {
+  animation-delay: 0.9s;
+}
+
+.fade-in.delay-4 {
+  animation-delay: 1.2s;
+}
+
+.fade-in.delay-5 {
+  animation-delay: 1.5s;
+}
+
+.fade-in.delay-6 {
+  animation-delay: 1.8s;
+}
+
+/* Grid Layout for Love Section */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.grid-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin: 0 auto 1rem; /* Center horizontally with margin auto */
+  display: block; /* Ensures the image behaves like a block element */
+}
+
+.big-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin: 0 auto 1rem; /* Center horizontally with margin auto */
+  display: block; /* Ensures the image behaves like a block element */
+}
+
+.grid-text h3 {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: var(--black);
+}
+
+.grid-text h1 {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 800;
+  font-size: 5.5rem;
+}
+
+.grid-text p {
+  font-family: "PPNeueCorp", sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr; /* One column for smaller screens */
+  }
+}
+
+.separator {
+  width: 0;
+  height: 2px;
+  background: var(--purple);
+  margin: 1.5rem auto;
+  border-radius: 1px;
+  opacity: 0;
+  animation: growWidth 1s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes growWidth {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+.gif-background {
+  background-image: url("../img/share-joy.gif"); /* Path to your GIF */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto 250px; /* Maintain original aspect ratio and set height */
+  background-position: center top; /* Position at the top center */
+  height: 250px; /* Adjust the height of the repeating section */
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: flex-end; /* Align the text below the background */
+  justify-content: center;
+}
+
+.gif-background-love {
+  background-image: url("../img/love.gif"); /* Path to your GIF */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto 250px; /* Maintain original aspect ratio and set height */
+  background-position: center top; /* Position at the top center */
+  height: 250px; /* Adjust the height of the repeating section */
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: flex-end; /* Align the text below the background */
+  justify-content: center;
+}
+
+.gif-background-sadness {
+  background-image: url("../img/sadness.gif"); /* Path to your GIF */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto 250px; /* Maintain original aspect ratio and set height */
+  background-position: center top; /* Position at the top center */
+  height: 250px; /* Adjust the height of the repeating section */
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: flex-end; /* Align the text below the background */
+  justify-content: center;
+}
+
+.gif-background-anger {
+  background-image: url("../img/anger6.gif"); /* Path to your GIF */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto 250px; /* Maintain original aspect ratio and set height */
+  background-position: center top; /* Position at the top center */
+  height: 250px; /* Adjust the height of the repeating section */
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: flex-end; /* Align the text below the background */
+  justify-content: center;
+}
+
+.gif-background-fear {
+  background-image: url("../img/fear.gif"); /* Path to your GIF */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto 250px; /* Maintain original aspect ratio and set height */
+  background-position: center top; /* Position at the top center */
+  height: 250px; /* Adjust the height of the repeating section */
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: flex-end; /* Align the text below the background */
+  justify-content: center;
+}
+
+.content {
+  background: none; /* Ensure no overlay background */
+  padding: 1rem;
+  text-align: center;
+}
