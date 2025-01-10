@@ -120,6 +120,14 @@ p {
   font-size: 10rem;
   color: var(--white);
   cursor: default;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .site-logo {
+    font-size: 5rem;
+    padding: 0 1rem;
+  }
 }
 
 .header-content {
